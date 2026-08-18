@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mente Leve - Perfil</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    /* =========================================
+       CONFIGURAÇÕES GERAIS E FUNDO
+       ========================================= */
+    body {
+      background: radial-gradient(circle at top, #111836 0%, #050814 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-container {
+      max-width: 480px; /* Mantém a proporção de celular */
+      margin: 0 auto;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    /* =========================================
+       CABEÇALHO COM BOTÃO VOLTAR
+       ========================================= */
+    .top-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .btn-back {
+      color: #00d2ff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-back:hover {
+      opacity: 0.8;
+      color: #00d2ff;
+    }
+
+    .header-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* =========================================
+       ÁREA DO USUÁRIO (FOTO E NOME)
+       ========================================= */
+    .user-profile-section {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .avatar-wrapper {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0099ff 0%, #a855f7 100%);
+      padding: 3px; /* Espessura da borda colorida */
+      margin: 0 auto 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      background-color: #1a223d;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar-inner i {
+      font-size: 3.5rem;
+      color: #6c7a9c;
+    }
+
+    .user-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .user-status {
+      font-size: 0.8rem;
+      color: #00d2ff;
+      background: rgba(0, 210, 255, 0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    /* =========================================
+       MENU DE OPÇÕES DO PERFIL
+       ========================================= */
+    .profile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu-item {
+      background: rgba(23, 19, 58, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #ffffff;
+      transition: background 0.2s;
+    }
+
+    .menu-item:hover {
+      background: rgba(23, 19, 58, 0.9);
+      color: #ffffff;
+    }
+
+    .menu-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .menu-left i {
+      color: #a0abc0;
+      font-size: 1.2rem;
+    }
+
+    .menu-arrow {
+      color: #6c7a9c;
+      font-size: 1rem;
+    }
+
+    /* =========================================
+       ÁREA DE UPLOAD (RECEITAS MÉDICAS)
+       ========================================= */
+    .menu-item-expandable {
+      background: rgba(23, 19, 58, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .upload-box {
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      color: #a0abc0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .upload-box:hover {
+      border-color: #00d2ff;
+      color: #00d2ff;
+      background: rgba(0, 210, 255, 0.05);
+    }
+
+    .upload-box i {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Botão Sair */
+    .btn-logout {
+      margin-top: auto;
+      background: transparent;
+      border: 1px solid #ff4757;
+      color: #ff4757;
+      border-radius: 15px;
+      padding: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-logout:hover {
+      background: rgba(255, 71, 87, 0.1);
+      color: #ff4757;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Cabeçalho -->
+    <header class="top-header">
+      <!-- Botão Voltar -->
+      <a href="index.html" class="btn-back">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+      
+      <div class="header-title">Perfil & Saúde</div>
+    </header>
+
+    <!-- Área de Informações do Usuário -->
+    <div class="user-profile-section">
+      <div class="avatar-wrapper">
+        <div class="avatar-inner">
+          <!-- Coloque a tag <img> com a foto real aqui depois -->
+          <i class="bi bi-person"></i>
+        </div>
+      </div>
+      <div class="user-name">Ana Silva</div>
+      <div class="user-status">Premium Member</div>
+    </div>
+
+    <!-- Lista de Opções -->
+    <div class="profile-menu">
+      
+      <!-- Meus Pedidos -->
+      <a href="#" class="menu-item">
+        <div class="menu-left">
+          <i class="bi bi-box-seam"></i> Meus Pedidos
+        </div>
+        <i class="bi bi-chevron-right menu-arrow"></i>
+      </a>
+
+      <!-- Receitas Médicas (Com Área de Upload Embutida) -->
+      <div class="menu-item-expandable">
+        <div class="menu-item-header">
+          <div class="menu-left">
+            <i class="bi bi-file-medical"></i> Receitas Médicas
+          </div>
+          <i class="bi bi-chevron-down menu-arrow"></i>
+        </div>
+        
+        <!-- Box de Upload -->
+        <div class="upload-box">
+          <i class="bi bi-cloud-arrow-up"></i>
+          <span>Upload de Nova Receita</span>
+        </div>
+      </div>
+
+      <!-- Meus Dados -->
+      <a href="#" class="menu-item">
+        <div class="menu-left">
+          <i class="bi bi-person-vcard"></i> Meus Dados
+        </div>
+        <i class="bi bi-chevron-right menu-arrow"></i>
+      </a>
+
+      <!-- Configurações -->
+      <a href="Atendimento.html" class="menu-item mb-4">
+        <div class="menu-left">
+          <i class="bi bi-gear"></i> Configurações
+        </div>
+        <i class="bi bi-chevron-right menu-arrow"></i>
+      </a>
+
+    </div> <!-- Fim da Lista -->
+
+    <!-- Botão Sair (Empurrado para o final da tela) -->
+    <a href="login.html"><button class="btn btn-logout w-100">Sair da Conta</button></a>
+
+  </div> <!-- Fim do App Container -->
+
+</body>
+</html>

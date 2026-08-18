@@ -1,0 +1,90 @@
+/* Configuração de Fundo da Página */
+body {
+  background: radial-gradient(circle at center, #0f1631 0%, #050814 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Card Principal de Login */
+.card-custom {
+  background: linear-gradient(180deg, rgba(23, 19, 58, 0.9) 0%, rgba(10, 11, 28, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  width: 100%;
+  max-width: 380px;
+  backdrop-filter: blur(10px);
+}
+
+/* Espaço do Logo */
+.logo-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.2); /* Borda tracejada para sinalizar a área da imagem */
+}
+
+.logo-icon {
+  font-size: 3.5rem;
+  color: #00d2ff;
+}
+
+/* Título */
+.app-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+/* Inputs Estilizados */
+.form-control-custom {
+  background-color: #1a223d !important;
+  border: 1px solid #2a3558 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.form-control-custom::placeholder {
+  color: #6c7a9c;
+}
+
+.form-control-custom:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 180, 216, 0.25);
+  border-color: #00b4d8 !important;
+}
+
+/* Ícone de Senha */
+.password-icon {
+  color: #6c7a9c;
+  cursor: pointer;
+}
+
+/* Botão com Gradiente */
+.btn-gradient {
+  background: linear-gradient(90deg, #0099ff 0%, #a855f7 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+/* Links */
+.link-custom {
+  color: #8b9bb4;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.link-custom:hover {
+  color: #ffffff;
+}

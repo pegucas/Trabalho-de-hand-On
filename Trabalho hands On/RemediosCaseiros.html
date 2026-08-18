@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mente Leve - Remédios Caseiros</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    /* =========================================
+       CONFIGURAÇÕES GERAIS E FUNDO
+       ========================================= */
+    body {
+      background: radial-gradient(circle at top, #111836 0%, #050814 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* =========================================
+       CABEÇALHO COM BOTÃO VOLTAR
+       ========================================= */
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .btn-back {
+      position: absolute;
+      left: 0;
+      color: #00d2ff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-back:hover {
+      opacity: 0.8;
+      color: #00d2ff;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .logo-text i {
+      color: #00d2ff;
+      font-size: 1.3rem;
+    }
+
+    /* =========================================
+       TÍTULOS E CATEGORIAS DE TEXTO
+       ========================================= */
+    .page-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .page-subtitle {
+      color: #a0abc0;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .categories-text-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      white-space: nowrap;
+    }
+
+    .categories-text-scroll::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+
+    .category-link {
+      color: #6c7a9c;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .category-link.active {
+      color: #00d2ff;
+      border-bottom: 2px solid #00d2ff;
+    }
+
+    .category-link:hover {
+      color: #ffffff;
+    }
+
+    /* =========================================
+       CARDS DE CONTEÚDO (GRID)
+       ========================================= */
+    .remedy-card {
+      background: rgba(23, 19, 58, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 12px;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .remedy-card:hover {
+      transform: translateY(-3px);
+      background: rgba(23, 19, 58, 0.9);
+    }
+
+    .btn-favorite {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      z-index: 2;
+      backdrop-filter: blur(5px);
+    }
+
+    .btn-favorite:hover {
+      color: #ff4757;
+    }
+
+    .remedy-img-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    /* Estilo para quando você colocar a imagem real da planta */
+    .remedy-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .remedy-img-box i {
+      font-size: 2.5rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .remedy-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .remedy-desc {
+      font-size: 0.8rem;
+      color: #a0abc0;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Limita a 2 linhas de texto */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Cabeçalho -->
+    <header class="top-header">
+      <!-- Botão Voltar -->
+      <a href="FarmaciaDigital.html" class="btn-back">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+      
+      <div class="logo-text">
+        <i class="bi bi-heart-pulse-fill"></i> Mente Leve
+      </div>
+    </header>
+
+    <!-- Títulos da Página -->
+    <h1 class="page-title">Remédios Caseiros</h1>
+    <div class="page-subtitle">Natureza & Saúde</div>
+
+    <!-- Filtros / Categorias -->
+    <div class="categories-text-scroll">
+      <a class="category-link active">Chás e Infusões</a>
+      <a class="category-link">Ervas Medicinais</a>
+      <a class="category-link">Fitoterapia</a>
+    </div>
+
+    <!-- Grid de Opções Naturais -->
+    <div class="row g-3">
+      
+      <!-- Card 1 -->
+      <div class="col-6">
+        <div class="remedy-card">
+          <button class="btn-favorite"><i class="bi bi-suit-heart"></i></button>
+          <div class="remedy-img-box">
+            <!-- Substitua pelo <img> real -->
+            <i class="bi bi-flower1"></i>
+          </div>
+          <div class="remedy-title">Chá de Camomila</div>
+          <div class="remedy-desc">Calmante natural que auxilia no sono e reduz a ansiedade diária.</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-6">
+        <div class="remedy-card">
+          <button class="btn-favorite"><i class="bi bi-suit-heart"></i></button>
+          <div class="remedy-img-box">
+            <i class="bi bi-droplet-half"></i>
+          </div>
+          <div class="remedy-title">Óleo Essencial</div>
+          <div class="remedy-desc">Alívio rápido de tensões musculares e dores de cabeça.</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-6">
+        <div class="remedy-card">
+          <button class="btn-favorite"><i class="bi bi-suit-heart"></i></button>
+          <div class="remedy-img-box">
+            <i class="bi bi-flower3"></i>
+          </div>
+          <div class="remedy-title">Chá Verde</div>
+          <div class="remedy-desc">Rico em antioxidantes, melhora a função cerebral e a energia.</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-6">
+        <div class="remedy-card">
+          <button class="btn-favorite"><i class="bi bi-suit-heart"></i></button>
+          <div class="remedy-img-box">
+            <i class="bi bi-tree"></i>
+          </div>
+          <div class="remedy-title">Eucalipto</div>
+          <div class="remedy-desc">Excelente para inalação, limpando as vias respiratórias.</div>
+        </div>
+      </div>
+
+    </div> <!-- Fim Grid -->
+
+  </div> <!-- Fim App Container -->
+
+</body>
+</html>
