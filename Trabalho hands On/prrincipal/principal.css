@@ -1,0 +1,207 @@
+    /* =========================================
+       CONFIGURAÇÕES GERAIS DA TELA
+       ========================================= */
+    body {
+        background: #0a0e17;
+        /* Fundo escuro padrão do app */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #ffffff;
+        margin: 0;
+        padding-bottom: 80px;
+        /* Espaço para o menu inferior não cobrir o conteúdo */
+    }
+
+    /* Container simulando a tela do celular (para ficar bonito no PC também) */
+    .app-container {
+        max-width: 480px;
+        margin: 0 auto;
+        background: radial-gradient(circle at top left, #121a30 0%, #050814 100%);
+        min-height: 100vh;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+
+    /* =========================================
+       TOPO & BARRA DE PESQUISA
+       ========================================= */
+    .top-bar {
+        padding: 20px 20px 10px 20px;
+    }
+
+    .app-logo-text {
+        font-weight: 600;
+        font-size: 1.2rem;
+        background: linear-gradient(90deg, #00d2ff, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #a855f7;
+        object-fit: cover;
+    }
+
+    .search-box {
+        background-color: #1a223d;
+        border-radius: 20px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .search-box input {
+        background: transparent;
+        border: none;
+        color: #fff;
+        width: 100%;
+        outline: none;
+    }
+
+    .search-box input::placeholder {
+        color: #6c7a9c;
+    }
+
+    /* =========================================
+       SEÇÃO: NOVIDADES TECH (BANNER)
+       ========================================= */
+    .banner-card {
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(168, 85, 247, 0.2));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .banner-content {
+        z-index: 2;
+    }
+
+    /* Espaço para a imagem do banner */
+    .banner-img-placeholder {
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    /* Efeito de brilho no fundo do banner */
+    .banner-card::after {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: #00d2ff;
+        filter: blur(80px);
+        z-index: 1;
+        opacity: 0.4;
+    }
+
+    /* =========================================
+       SEÇÃO: CUIDE-SE (CARDS HORIZONTAIS)
+       ========================================= */
+    .horizontal-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        /* Esconde a barra de rolagem */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE e Edge */
+    }
+
+    .horizontal-scroll-container::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
+    }
+
+    .category-card {
+        min-width: 130px;
+        background: #151a2e;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category-img {
+        height: 100px;
+        background-color: #232b45;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* =========================================
+       MENU INFERIOR (CONSOLE)
+       ========================================= */
+    .footer-console {
+        background: rgba(10, 11, 28, 0.95);
+        backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 480px;
+        /* Acompanha o app-container */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .nav-item-console {
+        color: #6c7a9c;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        flex: 1;
+        padding: 10px 0;
+    }
+
+    .console-label {
+        font-size: 0.65rem;
+        font-weight: 500;
+        display: block;
+        margin-top: 3px;
+    }
+
+    .nav-item-console:hover,
+    .nav-item-console.active {
+        color: #00d2ff;
+    }
+
+    .console-main-btn {
+        position: relative;
+        top: -20px;
+    }
+
+    .main-btn-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00d2ff 0%, #a855f7 100%);
+        color: #ffffff;
+        margin: 0 auto;
+        border: 4px solid #050814;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    }

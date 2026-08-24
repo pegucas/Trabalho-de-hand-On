@@ -1,0 +1,171 @@
+ /* =========================================
+       CONFIGURAÇÕES GERAIS
+       ========================================= */
+ body {
+     background: radial-gradient(circle at top, #111836 0%, #050814 100%);
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color: #ffffff;
+     margin: 0;
+     padding-bottom: 90px;
+     /* Espaço para a barra de compra fixa */
+     min-height: 100vh;
+ }
+
+ .app-container {
+     max-width: 480px;
+     margin: 0 auto;
+     background-color: transparent;
+     position: relative;
+ }
+
+ /* =========================================
+       CABEÇALHO FLUTUANTE
+       ========================================= */
+ .top-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 20px;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     z-index: 10;
+ }
+
+ .btn-action {
+     background: rgba(10, 11, 28, 0.6);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     color: #ffffff;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     backdrop-filter: blur(5px);
+ }
+
+ /* =========================================
+       IMAGEM DO PRODUTO (HERO)
+       ========================================= */
+ .product-hero {
+     width: 100%;
+     height: 350px;
+     background: rgba(255, 255, 255, 0.02);
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 0 0 30px 30px;
+     overflow: hidden;
+ }
+
+ .product-hero i {
+     font-size: 6rem;
+     color: rgba(255, 255, 255, 0.2);
+ }
+
+ /* =========================================
+       INFORMAÇÕES DO PRODUTO
+       ========================================= */
+ .product-info-section {
+     padding: 25px 20px;
+ }
+
+ .product-category {
+     color: #00d2ff;
+     font-size: 0.85rem;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin-bottom: 8px;
+ }
+
+ .product-title {
+     font-size: 1.5rem;
+     font-weight: 700;
+     margin-bottom: 10px;
+     line-height: 1.2;
+ }
+
+ .product-rating {
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     color: #ffc107;
+     font-size: 0.9rem;
+     margin-bottom: 20px;
+ }
+
+ .rating-text {
+     color: #a0abc0;
+     font-size: 0.85rem;
+     margin-left: 5px;
+ }
+
+ .section-title {
+     font-size: 1.1rem;
+     font-weight: 600;
+     margin-bottom: 15px;
+     margin-top: 25px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     padding-bottom: 8px;
+ }
+
+ .product-description {
+     color: #a0abc0;
+     font-size: 0.95rem;
+     line-height: 1.6;
+ }
+
+ /* =========================================
+       BARRA DE COMPRA (FIXA NO RODAPÉ)
+       ========================================= */
+ .bottom-buy-bar {
+     position: fixed;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 100%;
+     max-width: 480px;
+     background: rgba(10, 11, 28, 0.95);
+     backdrop-filter: blur(15px);
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding: 15px 20px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     z-index: 1000;
+ }
+
+ .price-block {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .price-label {
+     font-size: 0.75rem;
+     color: #a0abc0;
+ }
+
+ .price-value {
+     font-size: 1.4rem;
+     font-weight: 700;
+     color: #ffffff;
+ }
+
+ .btn-buy {
+     background: linear-gradient(90deg, #0099ff 0%, #a855f7 100%);
+     color: white;
+     border: none;
+     border-radius: 15px;
+     padding: 12px 25px;
+     font-size: 1rem;
+     font-weight: 600;
+     transition: opacity 0.3s;
+ }
+
+ .btn-buy:hover {
+     opacity: 0.9;
+ }
