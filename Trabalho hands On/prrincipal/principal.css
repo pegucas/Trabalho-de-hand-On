@@ -15,7 +15,7 @@
     .app-container {
         max-width: 480px;
         margin: 0 auto;
-        background: radial-gradient(circle at top left, #121a30 0%, #050814 100%);
+        background: radial-gradient(circle at top left, #5cbdb9 0%, #6f7fb7 70%);
         min-height: 100vh;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
         position: relative;
@@ -31,7 +31,7 @@
     .app-logo-text {
         font-weight: 600;
         font-size: 1.2rem;
-        background: linear-gradient(90deg, #00d2ff, #a855f7);
+        background: linear-gradient(90deg, #707070 );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -40,12 +40,12 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        border: 2px solid #a855f7;
+        border: 2px solid #6f7fb7;
         object-fit: cover;
     }
 
     .search-box {
-        background-color: #1a223d;
+        background-color: #233845;
         border-radius: 20px;
         padding: 10px 15px;
         display: flex;
@@ -70,8 +70,8 @@
        SEÇÃO: NOVIDADES TECH (BANNER)
        ========================================= */
     .banner-card {
-        background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(168, 85, 247, 0.2));
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(135deg, rgba(0, 82, 101, 0.2), rgba(168, 85, 247, 0.2));
+        border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 20px;
         height: 150px;
         display: flex;
@@ -109,7 +109,7 @@
         background: #00d2ff;
         filter: blur(80px);
         z-index: 1;
-        opacity: 0.4;
+        opacity: 0;
     }
 
     /* =========================================
@@ -134,7 +134,7 @@
 
     .category-card {
         min-width: 130px;
-        background: #151a2e;
+        background: #15262e;
         border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: 16px;
         overflow: hidden;
@@ -144,7 +144,7 @@
 
     .category-img {
         height: 100px;
-        background-color: #232b45;
+        background-color: #233845;
         display: flex;
         align-items: center;
         justify-content: center;
