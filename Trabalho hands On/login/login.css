@@ -1,90 +1,207 @@
-/* Configuração de Fundo da Página */
-body {
-  background: radial-gradient(circle at center, #0f1631 0%, #050814 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-  margin: 0;
-}
+    /* =========================================
+       CONFIGURAÇÕES GERAIS DA TELA
+       ========================================= */
+    body {
+        background: #0a0e17;
+        /* Fundo escuro padrão do app */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #ffffff;
+        margin: 0;
+        padding-bottom: 80px;
+        /* Espaço para o menu inferior não cobrir o conteúdo */
+    }
 
-/* Card Principal de Login */
-.card-custom {
-  background: linear-gradient(180deg, rgba(23, 19, 58, 0.9) 0%, rgba(10, 11, 28, 0.95) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 28px;
-  width: 100%;
-  max-width: 380px;
-  backdrop-filter: blur(10px);
-}
+    /* Container simulando a tela do celular (para ficar bonito no PC também) */
+    .app-container {
+        max-width: 480px;
+        margin: 0 auto;
+        background: radial-gradient(circle at top left, #5cbdb9 0%, #6f7fb7 70%);
+        min-height: 100vh;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
 
-/* Espaço do Logo */
-.logo-container {
-  width: 100px;
-  height: 100px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(255, 255, 255, 0.2); /* Borda tracejada para sinalizar a área da imagem */
-}
+    /* =========================================
+       TOPO & BARRA DE PESQUISA
+       ========================================= */
+    .top-bar {
+        padding: 20px 20px 10px 20px;
+    }
 
-.logo-icon {
-  font-size: 3.5rem;
-  color: #00d2ff;
-}
+    .app-logo-text {
+        font-weight: 600;
+        font-size: 1.2rem;
+        background: linear-gradient(90deg, #707070 );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-/* Título */
-.app-title {
-  font-weight: 600;
-  font-size: 1.8rem;
-  color: #ffffff;
-}
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #6f7fb7;
+        object-fit: cover;
+    }
 
-/* Inputs Estilizados */
-.form-control-custom {
-  background-color: #1a223d !important;
-  border: 1px solid #2a3558 !important;
-  color: #ffffff !important;
-  border-radius: 12px !important;
-  padding: 0.75rem 1rem;
-  font-size: 0.95rem;
-}
+    .search-box {
+        background-color: #233845;
+        border-radius: 20px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-.form-control-custom::placeholder {
-  color: #6c7a9c;
-}
+    .search-box input {
+        background: transparent;
+        border: none;
+        color: #fff;
+        width: 100%;
+        outline: none;
+    }
 
-.form-control-custom:focus {
-  box-shadow: 0 0 0 0.25rem rgba(0, 180, 216, 0.25);
-  border-color: #00b4d8 !important;
-}
+    .search-box input::placeholder {
+        color: #6c7a9c;
+    }
 
-/* Ícone de Senha */
-.password-icon {
-  color: #6c7a9c;
-  cursor: pointer;
-}
+    /* =========================================
+       SEÇÃO: NOVIDADES TECH (BANNER)
+       ========================================= */
+    .banner-card {
+        background: linear-gradient(135deg, rgba(0, 82, 101, 0.2), rgba(168, 85, 247, 0.2));
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+    }
 
-/* Botão com Gradiente */
-.btn-gradient {
-  background: linear-gradient(90deg, #0099ff 0%, #a855f7 100%);
-  border: none;
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 12px;
-  transition: opacity 0.3s ease;
-}
+    .banner-content {
+        z-index: 2;
+    }
 
-.btn-gradient:hover {
-  opacity: 0.9;
-  color: #ffffff;
-}
+    /* Espaço para a imagem do banner */
+    .banner-img-placeholder {
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
 
-/* Links */
-.link-custom {
-  color: #8b9bb4;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
+    /* Efeito de brilho no fundo do banner */
+    .banner-card::after {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: #00d2ff;
+        filter: blur(80px);
+        z-index: 1;
+        opacity: 0;
+    }
 
-.link-custom:hover {
-  color: #ffffff;
-}
+    /* =========================================
+       SEÇÃO: CUIDE-SE (CARDS HORIZONTAIS)
+       ========================================= */
+    .horizontal-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        /* Esconde a barra de rolagem */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE e Edge */
+    }
+
+    .horizontal-scroll-container::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
+    }
+
+    .category-card {
+        min-width: 130px;
+        background: #15262e;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .category-img {
+        height: 100px;
+        background-color: #233845;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* =========================================
+       MENU INFERIOR (CONSOLE)
+       ========================================= */
+    .footer-console {
+        background: rgba(10, 11, 28, 0.95);
+        backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 480px;
+        /* Acompanha o app-container */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .nav-item-console {
+        color: #6c7a9c;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        flex: 1;
+        padding: 10px 0;
+    }
+
+    .console-label {
+        font-size: 0.65rem;
+        font-weight: 500;
+        display: block;
+        margin-top: 3px;
+    }
+
+    .nav-item-console:hover,
+    .nav-item-console.active {
+        color: #00d2ff;
+    }
+
+    .console-main-btn {
+        position: relative;
+        top: -20px;
+    }
+
+    .main-btn-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00d2ff 0%, #a855f7 100%);
+        color: #ffffff;
+        margin: 0 auto;
+        border: 4px solid #050814;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    }
